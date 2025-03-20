@@ -7,6 +7,7 @@
 4. 收不到验证码怎么办？帮不了任何忙。
 5. 会有封号风险吗？会存在风险，但风险取决于很多因素，参考：https://github.com/LonamiWebs/Telethon/issues/824
 
+无法申请 API （一直提示 ERROR 等）可以尝试这个教程，[另一种不需要 API ID 和 API HASH 的登录方式](https://github.com/liesauer/TGLogin/discussions/1)。
 
 **登录器不保存、上传任何历史登录信息，请自行妥善保管 Session**
 

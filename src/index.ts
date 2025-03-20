@@ -41,12 +41,26 @@ let client: TelegramClient;
 
     console.log("");
 
+    logger.info("无法申请API？申请失败？");
+    logger.info("另一种不需要 API ID 和 API HASH 的登录方式");
+    logger.info("https://github.com/liesauer/TGLogin/discussions/1");
+
+    console.log("");
+
     const apiId: string   = await input.text("api_id: ");
     const apiHash: string = await input.text("api_hash: ");
 
     logger.info("手机号需要带区号，比如+86");
 
     const account: string = await input.text("phone: ");
+
+    logger.info("登录设备参数，回车使用默认");
+
+    const deviceModel: string = await input.text("deviceModel: ");
+    const systemVersion: string = await input.text("systemVersion: ");
+    const appVersion: string = await input.text("appVersion: ");
+    const langCode: string = await input.text("langCode: ");
+    const systemLangCode: string = await input.text("systemLangCode: ");
 
     logger.info("SOCKS5 代理，回车跳过");
     logger.info("格式：[user:pass@]127.0.0.1:1080");
@@ -75,6 +89,11 @@ let client: TelegramClient;
         connectionRetries: 5,
         useWSS: false,
         proxy: proxyObj,
+        deviceModel: deviceModel || undefined,
+        systemVersion: systemVersion || undefined,
+        appVersion: appVersion || undefined,
+        langCode: langCode || undefined,
+        systemLangCode: systemLangCode || undefined,
     });
 
     await client.start({
