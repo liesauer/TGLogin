@@ -92,8 +92,8 @@ let client: TelegramClient;
         deviceModel: deviceModel || undefined,
         systemVersion: systemVersion || undefined,
         appVersion: appVersion || undefined,
-        langCode: langCode || undefined,
-        systemLangCode: systemLangCode || undefined,
+        langCode: langCode || "en",
+        systemLangCode: systemLangCode || "en-US",
     });
 
     await client.start({
